@@ -22,12 +22,11 @@ public class Vtv {
 	LocalDate fecha;
 	
 	
-	public Vtv(String motor, String frenos, String suspension, String patente, LocalDate fecha) {
+	public Vtv(String motor, String frenos, String suspension, String patente) {
 		this.motor = motor;
 		this.frenos = frenos;
 		this.suspension = suspension;
 		this.patente = patente;
-		this.fecha = fecha;
 	}
 
 
@@ -102,10 +101,24 @@ public class Vtv {
 		
 		patente = JOptionPane.showInputDialog("Ingrese patente");
 		
-		if (this.frenos.isEmpty() || this.frenos == null || this.motor.isEmpty() || 
-				this.motor == null || this.suspension.isEmpty() || this.suspension == null) {
+		if (this.frenos == null  || this.motor == null || this.suspension == null) {
 			
-			JOptionPane.showMessageDialog(null, frenos);
+			JOptionPane.showMessageDialog(null, "Hay que arreglar partes, no paso la vtv");
+			
+			fecha = fecha.now();
+			
+			fecha = fecha.plusMonths(12);
+			
+			
+			JOptionPane.showMessageDialog(null, "tiene hasta el " + fecha + " para hacer la vtv otra vez");
+			
+			
+		} else {
+			
+			
+			JOptionPane.showMessageDialog(null, " Esta todo correcto");
+			
+			
 		}
 
 		
